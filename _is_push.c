@@ -29,6 +29,8 @@ int _is_number(const char *n)
 
 void _is_push(stack_t **h, unsigned int line_number, const char *n)
 {
+	int num;
+
 	if (!h)
 		return;
 	if (_is_number(n) == -1)
@@ -37,12 +39,18 @@ void _is_push(stack_t **h, unsigned int line_number, const char *n)
 		_is_free_dlist(h);
 		exit(EXIT_FAILURE);
 	}
-	else
+
+	num = atoi(n);
+	if (num == 0 && n[0] != '0')
 	{
-		if (_is_add_end_node(h, atoi(n)) == -1)
-		{
-			_is_free_dlist(h);
-			exit(EXIT_FAILURE);
-		}
+		printf("L%u: usage: push integer\n", line_number);
+		_is_free_dlist(h);
+		exit(EXIT_FAILURE);
 	}
+	if (_is_add_end_node(h, num) == -1)
+	{
+		_is_free_dlist(h);
+		exit(EXIT_FAILURE);
+	}
+}
 }
