@@ -21,6 +21,7 @@ void (*is_get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 		{"mod", _is_mod},
 		{"pchar", _is_pchar},
 		{"pstr", _is_pstr},
+		{"rotl", _is_rotl},
 		{NULL, NULL}
 	};
 

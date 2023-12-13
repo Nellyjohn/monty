@@ -51,6 +51,7 @@ void _is_mul(stack_t **h, unsigned int line_number);
 void _is_mod(stack_t **h, unsigned int line_number);
 void _is_pchar(stack_t **h, unsigned int line_number);
 void _is_pstr(stack_t **h, unsigned int line_number);
+void _is_rotl(stack_t **h, unsigned int lint_number);
 
 /* double linked list prototype */
 int _is_add_end_node(stack_t **h, int n);
