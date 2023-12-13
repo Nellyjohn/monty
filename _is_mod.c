@@ -4,7 +4,7 @@
  * _is_mod - computes the rest of the division of the second top
  * element of the stack by the top element of the stack.
  * @h: top of list
- * @line_number: line of command
+i * @line_number: line of command
  * Return: nothing
  */
 void _is_mod(stack_t **h, unsigned int line_number)
@@ -15,7 +15,7 @@ void _is_mod(stack_t **h, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*h)->n == 0)
+	if ((*h)->n == 0 || (*h)->next->n == 0)
 	{
 		printf("L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
