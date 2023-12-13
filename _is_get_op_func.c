@@ -11,6 +11,8 @@ void (*is_get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 	instruction_t instruction_s[] = {
 		{"pall", _is_pall},
 		{"pint", _is_pint},
+		{"pop", _is_pop},
+		{"swap", _is_swap},
 		{NULL, NULL}
 	};
 
