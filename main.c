@@ -37,6 +37,8 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(buf, "\n\t\a\r ;:");
+	if (token[0] == '#')
+		return (0);
 	while (token != NULL)
 	{
 		if (_ispush == 1)

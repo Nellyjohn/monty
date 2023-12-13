@@ -40,6 +40,24 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/**
+ * struct var_s - struct to contain the main variables of the Monty interpreter
+ * @queue: flag to determine if in stack vs queue mode
+ * @stack_len: length of the stack
+ */
+typedef struct var_s
+{
+    int queue;
+    size_t stack_len;
+} var_t;
+
+#define STACK 0
+#define QUEUE 1
+
+/* global struct to hold flag for queue and stack length */
+extern var_t var;
+
 /* opcode related prototype */
 void (*is_get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
 void _is_push(stack_t **h, unsigned int line_number, const char *n);
@@ -51,7 +69,9 @@ void _is_mul(stack_t **h, unsigned int line_number);
 void _is_mod(stack_t **h, unsigned int line_number);
 void _is_pchar(stack_t **h, unsigned int line_number);
 void _is_pstr(stack_t **h, unsigned int line_number);
-void _is_rotl(stack_t **h, unsigned int lint_number);
+void _is_rotl(stack_t **h, unsigned int line_number);
+void _is_rotr(stack_t **h, unsigned int line_number);
+void _is_queue(stack_t **h, unsigned int line_number);
 
 /* double linked list prototype */
 int _is_add_end_node(stack_t **h, int n);
