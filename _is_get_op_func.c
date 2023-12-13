@@ -15,6 +15,7 @@ void (*is_get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 		{"swap", _is_swap},
 		{"nop", _is_nop},
 		{"add", _is_add},
+		{"sub", _is_sub},
 		{NULL, NULL}
 	};
 
