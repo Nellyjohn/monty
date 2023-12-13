@@ -49,6 +49,7 @@ void _is_sub(stack_t **h, unsigned int line_number);
 void _is_div(stack_t **h, unsigned int line_number);
 void _is_mul(stack_t **h, unsigned int line_number);
 void _is_mod(stack_t **h, unsigned int line_number);
+void _is_pchar(stack_t **h, unsigned int line_number);
 
 /* double linked list prototype */
 int _is_add_end_node(stack_t **h, int n);
