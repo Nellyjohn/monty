@@ -1,5 +1,7 @@
 #include "monty.h"
 
+var_t var = {STACK, 0};
+
 /**
  * main - entry into interpreter
  * @argc: argc counter
