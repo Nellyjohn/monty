@@ -44,12 +44,14 @@ int main(int argc, char *argv[])
 			_is_push(&h, line, token);
 			_ispush = 0;
 			token = strtok(NULL, "\n\t\a\r ;:");
+			line++;
 			continue;
 		}
 		else if (strcmp(token, "push") == 0)
 		{
 			_ispush = 1;
 			token = strtok(NULL, "\n\t\a\r ;:");
+			continue;
 		}
 		else
 		{
@@ -63,11 +65,12 @@ int main(int argc, char *argv[])
 				printf("L%d: unknown instruction %s\n", line, token);
 				exit(EXIT_FAILURE);
 			}
-			line++;
-			token = strtok(NULL, "\n\t\a\r ;:");
 		}
+		line++;
+		token = strtok(NULL, "\n\t\a\r ;:");
 	}
 	_is_free_dlist(&h);
+	free(buf);
 	close(fd);
 	return (0);
 }

@@ -49,5 +49,6 @@ void _is_pall(stack_t **h, unsigned int line_number);
 int _is_add_end_node(stack_t **h, int n);
 void _is_delete_end_node(stack_t **h);
 void _is_free_dlist(stack_t **h);
+void _is_pint(stack_t **h, unsigned int line_number);
 
 #endif
