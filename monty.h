@@ -52,5 +52,6 @@ void _is_free_dlist(stack_t **h);
 void _is_pint(stack_t **h, unsigned int line_number);
 void _is_pop(stack_t **h, unsigned int line_number);
 void _is_swap(stack_t **h, unsigned int line_number);
+void _is_nop(stack_t **h, unsigned int line_number);
 
 #endif
