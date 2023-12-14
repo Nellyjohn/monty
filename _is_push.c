@@ -53,4 +53,3 @@ void _is_push(stack_t **h, unsigned int line_number, const char *n)
 		exit(EXIT_FAILURE);
 	}
 }
-}

@@ -16,7 +16,7 @@ void _is_div(stack_t **h, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*h)->n == 0)
+	if ((*h)->n == 0 || (*h)->next->n == 0)
 	{
 		printf("L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
