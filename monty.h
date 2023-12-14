@@ -72,6 +72,7 @@ void _is_pstr(stack_t **h, unsigned int line_number);
 void _is_rotl(stack_t **h, unsigned int line_number);
 void _is_rotr(stack_t **h, unsigned int line_number);
 void _is_queue(stack_t **h, unsigned int line_number);
+void _is_stack(stack_t **h, unsigned int line_number);
 
 /* double linked list prototype */
 int _is_add_end_node(stack_t **h, int n);
