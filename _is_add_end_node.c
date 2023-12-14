@@ -9,7 +9,7 @@
 
 int _is_add_end_node(stack_t **h, int n)
 {
-	stack_t *new_node = NULL;
+	stack_t *new_node;
 
 	if (!h)
 		return (-1);
