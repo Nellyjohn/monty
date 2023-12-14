@@ -59,9 +59,9 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			if (is_get_op_func(token) != 0)
+			if (get_op_func(token) != 0)
 			{
-				is_get_op_func(token)(&h, line);
+				get_op_func(token)(&h, line);
 			}
 			else
 			{
