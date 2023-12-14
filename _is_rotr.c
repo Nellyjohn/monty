@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * rotr - rotate so bottom node of stack becomes first one
+ * _is_rotr - rotate so bottom node of stack becomes first one
  * @h: node to be rotated
  * @line_number: node number
  */
