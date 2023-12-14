@@ -24,6 +24,7 @@ void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 		{"rotl", _is_rotl},
 		{"rotr", _is_rotr},
 		{"queue", _is_queue},
+		{"stack", _is_stack},
 		{NULL, NULL}
 	};
 

@@ -78,6 +78,7 @@ void _is_stack(stack_t **h, unsigned int line_number);
 int _is_add_end_node(stack_t **h, int n);
 void _is_delete_end_node(stack_t **h);
 void _is_free_dlist(stack_t **h);
+int _is_add_queue_end_node(stack_t **h, int n);
 void _is_pint(stack_t **h, unsigned int line_number);
 void _is_pop(stack_t **h, unsigned int line_number);
 void _is_swap(stack_t **h, unsigned int line_number);

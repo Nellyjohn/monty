@@ -47,9 +47,20 @@ void _is_push(stack_t **h, unsigned int line_number, const char *n)
 		_is_free_dlist(h);
 		exit(EXIT_FAILURE);
 	}
-	if (_is_add_end_node(h, num) == -1)
+	if (var.queue == STACK)
 	{
-		_is_free_dlist(h);
-		exit(EXIT_FAILURE);
+		if (_is_add_end_node(h, num) == -1)
+		{
+			_is_free_dlist(h);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		if (_is_add_queue_end_node(h, num) == -1)
+		{
+			_is_free_dlist(h);
+			exit(EXIT_FAILURE);
+		}
 	}
 }
