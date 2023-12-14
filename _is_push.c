@@ -20,6 +20,7 @@ int _is_number(const char *n)
 	return (0);
 }
 
+void _is_push(stack_t **h, unsigned int line_number, const char *n);
 /**
  * _is_push - add node to the start of a dlinked list
  * @h: head of linked list
@@ -29,10 +30,32 @@ int _is_number(const char *n)
 
 void _is_push(stack_t **h, unsigned int line_number, const char *n)
 {
-	int num;
+	stack_t *new_node = NULL;
 
 	if (!h)
-		return;
+		return (-1);
+
+	new_node = malloc(sizeof(struct stack_s));
+	if (!new_node)
+	{
+		printf("Error: malloc failed");
+		return (-1);
+	}
+
+	new_node->n = n;
+
+	if (!*h)
+	{
+		*h = new_node;
+		new_node->next = NULL;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		new_node->next = *h;
+		(*h)->prev = new_node;
+		*h = new_node;
+	}
 	if (_is_number(n) == -1)
 	{
 		printf("L%u: usage: push integer\n", line_number);
@@ -40,27 +63,29 @@ void _is_push(stack_t **h, unsigned int line_number, const char *n)
 		exit(EXIT_FAILURE);
 	}
 
-	num = atoi(n);
-	if (num == 0 && n[0] != '0')
-	{
-		printf("L%u: usage: push integer\n", line_number);
-		_is_free_dlist(h);
-		exit(EXIT_FAILURE);
-	}
-	if (var.queue == STACK)
-	{
-		if (_is_add_end_node(h, num) == -1)
-		{
-			_is_free_dlist(h);
-			exit(EXIT_FAILURE);
-		}
-	}
-	else
-	{
-		if (_is_add_queue_end_node(h, num) == -1)
-		{
-			_is_free_dlist(h);
-			exit(EXIT_FAILURE);
-		}
-	}
+	/**
+	 * num = atoi(n);
+	 * if (num == 0 && n[0] != '0')
+	 * {
+	 *	printf("L%u: usage: push integer\n", line_number);
+	 *	_is_free_dlist(h);
+	 *	exit(EXIT_FAILURE);
+	 * }
+	 * if (var.queue == STACK)
+	 * {
+	 *	if (_is_add_end_node(h, num) == -1)
+	 *	{
+	 *		_is_free_dlist(h);
+	 *		exit(EXIT_FAILURE);
+	 *	}
+	 * }
+	 * else
+	 * {
+	 *	if (_is_add_queue_end_node(h, num) == -1)
+	 *	{
+	 *		_is_free_dlist(h);
+	 *		exit(EXIT_FAILURE);
+	 *	}
+	 * }
+	 */
 }
