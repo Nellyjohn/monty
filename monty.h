@@ -48,8 +48,8 @@ typedef struct instruction_s
  */
 typedef struct var_s
 {
-    int queue;
-    size_t stack_len;
+	int queue;
+	size_t stack_len;
 } var_t;
 
 #define STACK 0
@@ -59,7 +59,7 @@ typedef struct var_s
 extern var_t var;
 
 /* opcode related prototype */
-void (*is_get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
+void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
 void _is_push(stack_t **h, unsigned int line_number, const char *n);
 void _is_pall(stack_t **h, unsigned int line_number);
 void _is_add(stack_t **h, unsigned int line_number);
