@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int main(int argc, char *argv[]);
 /**
  * main - entry into interpreter
  * @argc: argc counter
