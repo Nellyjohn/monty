@@ -9,31 +9,22 @@
 
 int _is_add_end_node(stack_t **h, int n)
 {
-	stack_t *new_node = NULL;
-
-	if (!h)
-		return (-1);
+	stack_t *new_node;
 
 	new_node = malloc(sizeof(struct stack_s));
 	if (!new_node)
 	{
 		printf("Error: malloc failed");
-		return (-1);
+		exit(EXIT_FAILURE);
 	}
 
 	new_node->n = n;
 
-	if (!*h)
-	{
-		*h = new_node;
-		new_node->next = NULL;
-		new_node->prev = NULL;
-	}
-	else
-	{
-		new_node->next = *h;
+	if (*h)
 		(*h)->prev = new_node;
-		*h = new_node;
-	}
+	new_node->next = *h;
+	new_node->prev = NULL;
+	*h = new_node;
+
 	return (0);
 }
