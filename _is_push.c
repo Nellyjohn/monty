@@ -29,28 +29,19 @@ int _is_number(const char *n)
 
 void _is_push(stack_t **h, unsigned int line_number, const char *n)
 {
-	int num;
-
 	if (!h)
 		return;
 
-	if (_is_number(n) == -1)
+	if (_is_number(n) == 0)
 	{
 		printf("L%d: usage: push integer\n", line_number);
 		_is_free_dlist(h);
 		exit(EXIT_FAILURE);
 	}
 
-	num = atoi(n);
-	if (num == 0 && n[0] != '0')
-	{
-		printf("L%d: usage: push integer\n", line_number);
-		_is_free_dlist(h);
-		exit(EXIT_FAILURE);
-	}
 	if (var.queue == STACK)
 	{
-		if (_is_add_end_node(h, num) == -1)
+		if (!_is_add_end_node(h, atoi(n)))
 		{
 			_is_free_dlist(h);
 			exit(EXIT_FAILURE);
@@ -58,7 +49,7 @@ void _is_push(stack_t **h, unsigned int line_number, const char *n)
 	}
 	else
 	{
-		if (_is_add_queue_end_node(h, num) == -1)
+		if (!_is_add_queue_end_node(h, atoi(n)))
 		{
 			_is_free_dlist(h);
 			exit(EXIT_FAILURE);
