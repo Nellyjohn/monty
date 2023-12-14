@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 			line++;
 			continue;
 		}
-		else if (strcmp(token, "push") == 0)
+		else if (strcmp(token, "push") == 0 || strcmp(token, "Push") == 0)
 		{
 			_ispush = 1;
 			token = strtok(NULL, "\n\t\a\r ;:");
