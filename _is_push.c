@@ -27,7 +27,7 @@ int _is_number(const char *n)
  * @n: integer
  */
 
-void _is_push(stack_t **h, unsigned int line_number, const char *n)
+void _is_push(stack_t **h, unsigned int line_number, char *n)
 {
 	if (!h)
 		return;
