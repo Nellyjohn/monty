@@ -39,6 +39,7 @@ void _is_push(stack_t **h, unsigned int line_number, char *n)
 	}
 
 	num = atoi(n);
+	printf("push %d\n", num);
 	if (var.queue == STACK)
 	{
 		if (_is_add_end_node(h, num) == -1)
