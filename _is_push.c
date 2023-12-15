@@ -35,7 +35,7 @@ void _is_push(stack_t **h, unsigned int line_number, char *n)
 	if (_is_number(n) == -1)
 	{
 		printf("L%d: usage: push integer\n", line_number);
-		_is_free_dlist(h);
+		/*_is_free_dlist(h);*/
 		exit(EXIT_FAILURE);
 	}
 
@@ -43,7 +43,7 @@ void _is_push(stack_t **h, unsigned int line_number, char *n)
 	{
 		if (_is_add_end_node(h, atoi(n)) == -1)
 		{
-			_is_free_dlist(h);
+			/*_is_free_dlist(h);*/
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -51,7 +51,7 @@ void _is_push(stack_t **h, unsigned int line_number, char *n)
 	{
 		if (_is_add_queue_end_node(h, atoi(n)) == -1)
 		{
-			_is_free_dlist(h);
+			/*is_free_dlist(h);*/
 			exit(EXIT_FAILURE);
 		}
 	}
