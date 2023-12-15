@@ -6,15 +6,15 @@
  * Return: 0 for numbr and -1 for not number
  */
 
-int _is_number(const char *n)
+int _is_number(char *n)
 {
 	int i = 0;
 
-	if (*n == '-')
-		i = 1;
-	for (; *(n + i) != '\0'; i++)
+	for (; n[i] != '\0'; i++)
 	{
-		if (isdigit(*(n + i)) == 0)
+		if (n[i] == '-' && i == 0)
+			continue;
+		if (isdigit(n[i]) == 0)
 			return (-1);
 	}
 	return (0);
@@ -29,29 +29,29 @@ int _is_number(const char *n)
 
 void _is_push(stack_t **h, unsigned int line_number, char *n)
 {
-	if (!h)
-		return;
+	int num;
 
 	if (_is_number(n) == -1)
 	{
 		printf("L%d: usage: push integer\n", line_number);
-		/*_is_free_dlist(h);*/
+		_is_free_dlist(h);
 		exit(EXIT_FAILURE);
 	}
 
+	num = atoi(n);
 	if (var.queue == STACK)
 	{
-		if (_is_add_end_node(h, atoi(n)) == -1)
+		if (_is_add_end_node(h, num) == -1)
 		{
-			/*_is_free_dlist(h);*/
+			_is_free_dlist(h);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
-		if (_is_add_queue_end_node(h, atoi(n)) == -1)
+		if (_is_add_queue_end_node(h, num) == -1)
 		{
-			/*is_free_dlist(h);*/
+			_is_free_dlist(h);
 			exit(EXIT_FAILURE);
 		}
 	}
