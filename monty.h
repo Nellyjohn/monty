@@ -60,7 +60,7 @@ extern var_t var;
 
 /* opcode related prototype */
 void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
-void _is_push(stack_t **h, unsigned int line_number, const char *n);
+void _is_push(stack_t **h, unsigned int line_number, char *n);
 void _is_pall(stack_t **h, unsigned int line_number);
 void _is_add(stack_t **h, unsigned int line_number);
 void _is_sub(stack_t **h, unsigned int line_number);
